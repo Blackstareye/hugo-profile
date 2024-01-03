@@ -1,0 +1,4 @@
+.contentbox {
+    display: flex;
+    gap: 1em;
+}

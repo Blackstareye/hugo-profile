@@ -77,8 +77,17 @@
                                 </div>
                                 {{ end }}
                             </div>
-
+                            {{ if .contentImage }}
+                            <div class="contentbox">
+                                <img src="{{ .contentImage }}" class="img-fluid rounded-start" alt="...">
+                                <div>
+                                    {{ .content | markdownify}}
+                                </div>
+                            </div>
+                            {{ else }}
                             {{ .content | markdownify}}
+                            {{ end }}
+                                {{/*  {{ .content | markdownify}}  */}}
                         </div>
                         {{ else }}
                         <div 
@@ -119,8 +128,18 @@
                                 {{ end }}
                             </div>
 
-                            <div class="pt-2">
+                            <div class="pt-2 contentbox">
+                                {{ if .contentImage }}
+                                <div class="contentbox">
+                                    <img src="{{ .contentImage }}" class="img-fluid rounded-start" alt="...">
+                                    <div>
+                                        {{ .content | markdownify}}
+                                    </div>
+                                </div>
+                                {{ else }}
                                 {{ .content | markdownify}}
+                                {{ end }}
+                                    {{/*  {{ .content | markdownify}}  */}}
                             </div>
                         </div>
                         {{ end }}
