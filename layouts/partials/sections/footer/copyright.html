@@ -20,5 +20,9 @@
                 </a>
             </div>
         </div>
+        <!-- Impressum -->
+        {{ if .Site.Params.showImpressum | default false }}
+        {{- partial "sections/footer/impressum.html" . -}}
+        {{ end }}
     </div>
 </div>

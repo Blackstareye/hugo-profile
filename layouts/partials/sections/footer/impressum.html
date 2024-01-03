@@ -1,0 +1,60 @@
+        <div class="text-center">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Launch demo modal
+            </button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content bg-dark">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Impressum</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                        {{ $data := .Site.Params.impressumsbody }}
+                          <div class="row">
+                            <div class="col-md-4">Name:</div>
+                            <div class="col-md-8 ms-auto"> {{ $data.name | default "nobody"}} </div>
+                          </div>
+                          <div class="row">
+                            {{ $data := .Site.Params.impressumsbody }}
+                            <div class="col-md-4">Address:</div>
+                            <div class="col-md-8 ms-auto"> 
+                                <div>
+
+                                    <span>
+                                            {{ $data.address.street | default "Aldabert"}} 
+                                    </span>
+                                    <span>
+                                        {{ $data.address.number | default "999"}} 
+                                    </span>
+                                    <span>
+                                        {{ $data.address.plz | default "999"}} 
+                                    </span>
+                                    <span>
+                                        {{ $data.address.city | default "Highway"}} 
+                                    </span>
+                                </div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-4">Mail:</div>
+                            <div class="col-md-8 ms-auto"> {{ $data.mail | default "nobody"}} </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-4">Phone:</div>
+                            <div class="col-md-8 ms-auto"> {{ $data.phone | default "-"}} </div>
+                          </div>
+                        </div>
+                      </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
